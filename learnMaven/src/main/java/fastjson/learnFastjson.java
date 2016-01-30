@@ -2,6 +2,7 @@ package fastjson;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -133,5 +134,45 @@ public class learnFastjson {
 		@SuppressWarnings("unchecked")
 		List<Map<String,Object>> mapList2 = (List<Map<String, Object>>) JSONArray.parse(mapListJsonResult);
 		System.out.println(mapList2.toString());
+	}
+	
+	@Test
+	public void analyzeJsonArray(){
+		List<Map<String,Object>> mapList = new ArrayList<Map<String,Object>>();
+		
+		Map<String,Object> map1 = new HashMap<String,Object>();
+		map1.put("name", "张三");
+		map1.put("id", 1L);
+		map1.put("age", 18);
+		
+		mapList.add(map1);
+		
+		Map<String,Object> map2 = new HashMap<String,Object>();
+		map2.put("name", "张2三");
+		map2.put("id", 12L);
+		map2.put("age", 128);
+		
+		mapList.add(map2);
+		
+		String mapListJsonResult = JSONArray.toJSONString(mapList);
+		JSONArray jsonArr = JSONArray.parseArray(mapListJsonResult);
+		
+		//通过下标遍历jsonArray
+		int size = jsonArr.size();
+		System.out.println(size);
+		System.out.println(jsonArr.getJSONObject(0));
+		
+		//通过迭代器循环遍历jsonArray
+		Iterator<Object> it = jsonArr.iterator();
+		while(it.hasNext()){
+			Object obj = it.next();
+			System.out.println(obj.toString());
+		}
+		
+//		for(Object json : jsonArr.toArray()){
+//			System.out.println(json.toString());
+//		}
+		
+		System.out.println(jsonArr.toString());
 	}
 }
