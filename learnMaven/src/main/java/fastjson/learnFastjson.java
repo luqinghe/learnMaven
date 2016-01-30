@@ -23,31 +23,31 @@ public class learnFastjson {
 	
 	
 	/**
-	 * °ÑÒ»¸ö¼òµ¥Àà×ª»»Îªjson×Ö·û´®
+	 * æŠŠä¸€ä¸ªç®€å•ç±»è½¬æ¢ä¸ºjsonå­—ç¬¦ä¸²
 	 */
 	@Test
 	public void getStudentJosn(){
 		Student student = new Student();
 		student.setId(1L);
 		student.setAge(18);
-		student.setName("ÕÅÈı");
+		student.setName("å¼ ä¸‰");
 		
 		String jsonStr = JSON.toJSONString(student);
 		System.out.println(jsonStr);
 	}
 	
 	/**
-	 * °ÑÒ»¸ö¸´ÔÓÀà£¨gradeÖĞÓĞlist<student>£©×ª»»³Éjson×Ö·û´®
+	 * æŠŠä¸€ä¸ªå¤æ‚ç±»ï¼ˆgradeä¸­æœ‰list<student>ï¼‰è½¬æ¢æˆjsonå­—ç¬¦ä¸²
 	 */
 	@Test
 	public void getGradeJson(){
 		Grade grade = new Grade();
 		grade.setId(2L);
-		grade.setGradeName("¼ÆËã»ú");
+		grade.setGradeName("è®¡ç®—æœº");
 		
 		List<Student> stuList = new ArrayList<Student>();
-		stuList.add(new Student(3L,"ÀîËÄ",3));
-		stuList.add(new Student(4L,"ÀîÎå",4));
+		stuList.add(new Student(3L,"æå››",3));
+		stuList.add(new Student(4L,"æäº”",4));
 		
 		grade.setStudents(stuList);
 		
@@ -58,21 +58,21 @@ public class learnFastjson {
 	
 	
 	/**
-	 * °ÑÒ»¸ölist<map>ÀàĞÍµÄÊı¾İ×ª»»³Éjson×Ö·û´®
+	 * æŠŠä¸€ä¸ªlist<map>ç±»å‹çš„æ•°æ®è½¬æ¢æˆjsonå­—ç¬¦ä¸²
 	 */
 	@Test
 	public void getListMapJson(){
 		List<Map<String,Object>> mapList = new ArrayList<Map<String,Object>>();
 		
 		Map<String,Object> map1 = new HashMap<String,Object>();
-		map1.put("name", "ÕÅÈı");
+		map1.put("name", "å¼ ä¸‰");
 		map1.put("id", 1L);
 		map1.put("age", 18);
 		
 		mapList.add(map1);
 		
 		Map<String,Object> map2 = new HashMap<String,Object>();
-		map2.put("name", "ÕÅ2Èı");
+		map2.put("name", "å¼ 2ä¸‰");
 		map2.put("id", 12L);
 		map2.put("age", 128);
 		
@@ -87,17 +87,17 @@ public class learnFastjson {
 	
 	
 	/**
-	 * °ÑÒ»¸ö¸´ÔÓÀà£¨gradeÖĞÓĞlist<student>£©µÄ×Ö·û´®×ª»»³É¸´ÔÓÀà
+	 * æŠŠä¸€ä¸ªå¤æ‚ç±»ï¼ˆgradeä¸­æœ‰list<student>ï¼‰çš„å­—ç¬¦ä¸²è½¬æ¢æˆå¤æ‚ç±»
 	 */
 	@Test
 	public void getGradeByJsonString(){
 		Grade grade = new Grade();
 		grade.setId(2L);
-		grade.setGradeName("¼ÆËã»ú");
+		grade.setGradeName("è®¡ç®—æœº");
 		
 		List<Student> stuList = new ArrayList<Student>();
-		stuList.add(new Student(3L,"ÀîËÄ",3));
-		stuList.add(new Student(4L,"ÀîÎå",4));
+		stuList.add(new Student(3L,"æå››",3));
+		stuList.add(new Student(4L,"æäº”",4));
 		
 		grade.setStudents(stuList);
 		
@@ -109,21 +109,21 @@ public class learnFastjson {
 	}
 	
 	/**
-	 * °ÑÒ»¸ölist<map>½á¹¹×ª»»µÄjson×Ö·û´®»¹Ô­
+	 * æŠŠä¸€ä¸ªlist<map>ç»“æ„è½¬æ¢çš„jsonå­—ç¬¦ä¸²è¿˜åŸ
 	 */
 	@Test
 	public void getListMapByJsonString(){
 		List<Map<String,Object>> mapList = new ArrayList<Map<String,Object>>();
 		
 		Map<String,Object> map1 = new HashMap<String,Object>();
-		map1.put("name", "ÕÅÈı");
+		map1.put("name", "å¼ ä¸‰");
 		map1.put("id", 1L);
 		map1.put("age", 18);
 		
 		mapList.add(map1);
 		
 		Map<String,Object> map2 = new HashMap<String,Object>();
-		map2.put("name", "ÕÅ2Èı");
+		map2.put("name", "å¼ 2ä¸‰");
 		map2.put("id", 12L);
 		map2.put("age", 128);
 		
@@ -141,14 +141,14 @@ public class learnFastjson {
 		List<Map<String,Object>> mapList = new ArrayList<Map<String,Object>>();
 		
 		Map<String,Object> map1 = new HashMap<String,Object>();
-		map1.put("name", "ÕÅÈı");
+		map1.put("name", "å¼ ä¸‰");
 		map1.put("id", 1L);
 		map1.put("age", 18);
 		
 		mapList.add(map1);
 		
 		Map<String,Object> map2 = new HashMap<String,Object>();
-		map2.put("name", "ÕÅ2Èı");
+		map2.put("name", "å¼ 2ä¸‰");
 		map2.put("id", 12L);
 		map2.put("age", 128);
 		
@@ -157,12 +157,12 @@ public class learnFastjson {
 		String mapListJsonResult = JSONArray.toJSONString(mapList);
 		JSONArray jsonArr = JSONArray.parseArray(mapListJsonResult);
 		
-		//Í¨¹ıÏÂ±ê±éÀújsonArray
+		//é€šè¿‡ä¸‹æ ‡éå†jsonArray
 		int size = jsonArr.size();
 		System.out.println(size);
 		System.out.println(jsonArr.getJSONObject(0));
 		
-		//Í¨¹ıµü´úÆ÷Ñ­»·±éÀújsonArray
+		//é€šè¿‡è¿­ä»£å™¨å¾ªç¯éå†jsonArray
 		Iterator<Object> it = jsonArr.iterator();
 		while(it.hasNext()){
 			Object obj = it.next();
